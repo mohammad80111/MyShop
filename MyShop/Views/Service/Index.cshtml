@@ -1,0 +1,59 @@
+﻿
+
+
+@model List<Service>
+<link href="~/css/table.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<link href="https://fonts.googleapis.com/css? family=Open+Sans:300, 400, 700" rel="stylesheet" type="text/css" />
+
+
+
+
+<h1 style="padding:0px;color:black">Service</h1> 
+
+<button type="button" style="margin-bottom:30px;margin-left:110px;" class="btn btn-info"><a href="/Service/Create">Add Service</a></button>
+<style>
+    .btn a {
+        color:white;
+        font-size:18px;
+        font-weight:bolder;
+        text-decoration:none;
+    }
+</style>
+<table class="container">
+    <thead>
+        <tr>
+            <th><h1>Service Id</h1></th>
+            <th><h1>Service Name</h1></th>
+            <th><h1>Delete</h1></th>
+        
+        </tr>
+    </thead>
+
+
+    @foreach(Service I in Model)
+    {
+        <tbody>
+            <tr>
+                <td>@I.ServiceId</td>
+                <td>@I.ServiceName</td>
+                <td><a href="/Service/Delete/@I.ServiceId">X</a></td>
+         
+            </tr>
+
+        </tbody>
+        
+    }
+   
+</table>
+
+
+
+
+   
